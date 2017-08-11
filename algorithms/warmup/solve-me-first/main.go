@@ -1,4 +1,5 @@
 package main
+
 import "fmt"
 
 func solveMeFirst(a uint32,b uint32) uint32{
