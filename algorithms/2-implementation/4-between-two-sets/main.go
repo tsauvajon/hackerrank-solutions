@@ -42,7 +42,7 @@ func main() {
 		b = append(b, intValue)
 	}
 
-	for i := a[len(a)-1]; i < b[0]; i++ {
+	for i := a[len(a)-1]; i <= b[0]; i++ {
 		isBetween := true
 		for j := 0; j < n && isBetween; j++ {
 			if i%a[j] != 0 {
