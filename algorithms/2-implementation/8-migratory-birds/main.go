@@ -23,7 +23,7 @@ func main() {
 		}
 	}
 
-	fmt.Print(max)
+	fmt.Print(max + 1)
 }
 
 func intScanln(n int) ([]int, error) {
