@@ -1,2 +1,2 @@
-# hackerrank-solutions
-My solutions for the hackerrank 30 day challenges + other challenges
+# Hackerrank solutions
+My solutions for the [HackerRank](https://www.hackerrank.com/) 30 day challenges + other challenges, using Golang
