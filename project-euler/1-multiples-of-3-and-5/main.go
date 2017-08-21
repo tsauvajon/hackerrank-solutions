@@ -42,8 +42,6 @@ func main() {
 
 		// sum = int64(sum3 + sum5 - sum15)
 
-		// fmt.Println(sum)
-
 		// v3 summation + big ints
 		max := big.NewInt(number - 1)
 		two := big.NewInt(2)
