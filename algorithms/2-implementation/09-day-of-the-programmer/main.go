@@ -47,6 +47,7 @@ func isLeap(year int) bool {
 	if year <= 1917 {
 		return year%4 == 0
 	}
+
 	return year%400 == 0 || (year%100 != 0 && year%4 == 0)
 }
 
