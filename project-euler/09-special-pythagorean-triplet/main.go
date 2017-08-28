@@ -1,9 +1,13 @@
 package main
 
 import "fmt"
+import "math/big"
 
 func main() {
-	var t, n int
+	var (
+		t int
+		n int64
+	)
 
 	fmt.Scan(&t)
 
@@ -14,22 +18,30 @@ func main() {
 	}
 }
 
-func specialPythagoreanTriplet(sum int) int64 {
-	max := int64(-1)
+func specialPythagoreanTriplet(sum int64) int64 {
+	// max := int64(-1)
+	max := big.NewInt(-1)
 
-	sum64 := int64(sum)
+	for a := int64(1); a <= sum/3; a++ {
+		b := (sum*sum - 2*sum*a) / (2*sum - 2*a)
+		c := sum - (a + b)
 
-	for a := int64(0); a <= sum64/3; a++ {
-		for b := a; b <= sum64/3; b++ {
-			c := sum64 - (a + b)
+		aSquare := big.NewInt(0).Mul(big.NewInt(a), big.NewInt(a))
+		bSquare := big.NewInt(0).Mul(big.NewInt(b), big.NewInt(b))
+		cSquare := big.NewInt(0).Mul(big.NewInt(c), big.NewInt(c))
 
-			product := a * b * c
+		abSquareSum := big.NewInt(0).Add(aSquare, bSquare)
 
-			if a*a+b*b == c*c && max < product {
-				max = product
-			}
+		if abSquareSum.Cmp(cSquare) != 0 {
+			continue
+		}
+
+		product := big.NewInt(0).Mul(big.NewInt(a), big.NewInt(b))
+		product = product.Mul(product, big.NewInt(c))
+		if max.Cmp(product) == -1 {
+			max = product
 		}
 	}
 
-	return max
+	return max.Int64()
 }
