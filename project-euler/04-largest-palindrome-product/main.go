@@ -13,7 +13,7 @@ func main() {
 
 	fmt.Scan(&t)
 
-	testCases = make([]int, t, t)
+	testCases = make([]int, t)
 
 	for i := range testCases {
 		fmt.Scan(&testCases[i])

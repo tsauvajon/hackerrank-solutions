@@ -10,7 +10,7 @@ func main() {
 
 	fmt.Scan(&t)
 
-	testCases = make([]uint64, t, t)
+	testCases = make([]uint64, t)
 
 	for i := range testCases {
 		fmt.Scan(&testCases[i])
