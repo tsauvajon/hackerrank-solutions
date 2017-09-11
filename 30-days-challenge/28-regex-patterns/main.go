@@ -1,5 +1,7 @@
 package main
 
+// TODO : use By sorting https://golang.org/pkg/sort/#example__sortKeys
+
 import (
 	"fmt"
 	"regexp"
